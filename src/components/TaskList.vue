@@ -3,6 +3,7 @@
      <li v-for="todo in sortedTasks"
        class="todo">
        <div class="view">
+         <input class="toggle" @click="completeTask(todo)" type="checkbox">
          <label>{{ todo.title }}</label>
        </div>
      </li>
@@ -14,12 +15,17 @@
     props: ['todoList'],
     computed: {
       sortedTasks: function () {
-        this.sorted = this.todoList
-        return this.sorted.sort(function (a, b) {
+        let sorted = this.todoList
+        return sorted.sort(function (a, b) {
           if (a.title < b.title) return -1
           if (a.title > b.title) return 1
           return 0
         })
+      }
+    },
+    methods: {
+      completeTask (task) {
+        task.completed = !task.completed
       }
     }
   }
@@ -128,5 +134,27 @@
 
 .todo-list li.editing:last-child {
 	margin-bottom: -1px;
+}
+
+/*
+	Hack to remove background from Mobile Safari.
+	Can't use it globally since it destroys checkboxes in Firefox
+*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	.toggle-all,
+	.todo-list li .toggle {
+		background: none;
+	}
+
+	.todo-list li .toggle {
+		height: 40px;
+	}
+
+	.toggle-all {
+		-webkit-transform: rotate(90deg);
+		transform: rotate(90deg);
+		-webkit-appearance: none;
+		appearance: none;
+	}
 }
 </style>
