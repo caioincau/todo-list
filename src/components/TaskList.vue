@@ -4,7 +4,7 @@
        class="todo">
        <div class="view">
          <input class="toggle" @click="completeTask(todo)" type="checkbox">
-         <label>{{ todo.title }}</label>
+         <label  v-bind:class="{ 'todo-completed': todo.completed }" >{{ todo.title }}</label>
        </div>
      </li>
    </ul>
@@ -43,6 +43,10 @@
 	position: relative;
 	font-size: 24px;
 	border-bottom: 1px solid #ededed;
+}
+
+.todo-completed{
+  text-decoration: line-through;
 }
 
 .todo-list li:last-child {
