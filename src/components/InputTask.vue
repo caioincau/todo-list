@@ -1,7 +1,9 @@
 <template>
-  <input class="new-todo"
-      @keyup.enter="addTask"
-      placeholder="O que precisa ser feito?">
+  <div>
+    <input class="new-todo"
+        @keyup.enter="addTask"
+        placeholder="O que precisa ser feito?">
+  </div>
 </template>
 
 <script>
