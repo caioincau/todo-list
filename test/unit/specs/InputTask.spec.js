@@ -7,4 +7,10 @@ describe('InputTask.vue', () => {
     const vm = new Constructor().$mount()
     expect(vm.$el.querySelectorAll('.new-todo').length).to.equal(1)
   })
+  it('should create the task correctly', () => {
+    const Constructor = Vue.extend(InputTask)
+    const vm = new Constructor().$mount()
+    let task = vm.createTask('Comprar leite')
+    expect(task.title).to.equal('Comprar leite')
+  })
 })
