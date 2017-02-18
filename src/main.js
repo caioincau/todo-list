@@ -22,7 +22,7 @@ new Vue({
   el: '#app',
   template: `
     <div id="app">
-      <transition name="fade">
+      <transition name="fade"  mode="out-in">
         <router-view class="view"></router-view>
       </transition>
     </div>

@@ -4,8 +4,8 @@
      <li v-for="(todo, index) in sortedTasks"
        class="todo" :key="index">
        <div class="view">
-         <input class="toggle" @click="completeTask(todo)" type="checkbox">
-         <label  v-bind:class="{ 'todo-completed': todo.completed }" >{{ todo.title }}</label>
+          <input class="toggle" @click="completeTask(todo)" type="checkbox">
+          <label  v-bind:class="{ 'todo-completed': todo.completed }" >{{ todo.title }}</label>
        </div>
      </li>
    </transition-group>

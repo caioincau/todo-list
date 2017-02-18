@@ -5,6 +5,7 @@
     </header>
     <input-task @newTask="addTask" ></input-task>
     <task-list v-bind:todo-list="tasks" ></task-list>
+    <router-link class="cep" to="/cep">Verificar CEP</router-link>
   </section>
 </template>
 
@@ -70,7 +71,14 @@ body {
 :focus {
 	outline: 0;
 }
-
+.cep{
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 5px;
+  border-top: 1px solid #ededed;
+  text-align: center;
+}
 .hidden {
 	display: none;
 }

@@ -2,7 +2,7 @@
   <section class="cepChecker">
     <label>Digite seu CEP</label>
     <input type="text"></input>
-    <router-link to="/">Go to Foo</router-link>
+    <router-link class="home" to="/">Ver tarefas</router-link>
   </section>
 </template>
 
@@ -15,6 +15,13 @@ export default {
 }
 </script>
 <style lang="less">
+.home{
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 5px;
+  text-align: center;
+}
 .cepChecker{
   margin: 20px 0;
   text-align: center;
@@ -24,6 +31,7 @@ export default {
   }
 
   input{
+    margin: 20px;
     height: 2em;
     padding: 2px;
   }

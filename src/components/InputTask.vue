@@ -1,8 +1,10 @@
 <template>
   <div>
-    <input class="new-todo"
-        @keyup.enter="addTask"
-        placeholder="O que precisa ser feito?">
+    <transition appear name="fade">
+      <input class="new-todo"
+          @keyup.enter="addTask"
+          placeholder="O que precisa ser feito?">
+    </transition>
   </div>
 </template>
 
