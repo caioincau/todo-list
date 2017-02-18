@@ -1,12 +1,6 @@
 import Vue from 'vue'
 import InputTask from 'src/components/InputTask'
 
-let construct = () => {
-  const Constructor = Vue.extend(InputTask)
-  const vm = new Constructor().$mount()
-  return vm
-}
-
 describe('InputTask.vue', () => {
 
   let vm = {}
