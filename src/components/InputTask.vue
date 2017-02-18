@@ -24,7 +24,7 @@ export default {
     },
     createTask (value) {
       let task = new Task()
-      task.completed = true
+      task.completed = false
       task.title = value
       return task
     },
