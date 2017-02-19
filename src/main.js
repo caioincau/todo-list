@@ -16,6 +16,13 @@ const router = new VueRouter({
   routes
 })
 
+// ========================
+// Resource
+// ========================
+import VueResource from 'vue-resource'
+
+Vue.use(VueResource)
+
 /* eslint-disable no-new */
 new Vue({
   router,
