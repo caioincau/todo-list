@@ -1,7 +1,7 @@
 <template>
   <div>
     <transition appear name="fade">
-      <input class="new-todo"
+      <input v-focus="true" class="new-todo"
           @keyup.enter="addTask"
           placeholder="O que precisa ser feito?">
     </transition>
@@ -10,12 +10,11 @@
 
 <script>
 import { Task } from '../models/Task'
+import Focus from '../directives/focus'
 
 export default {
-  data () {
-    return {
-
-    }
+  directives: {
+    'focus': Focus
   },
   methods: {
     addTask ($event) {
