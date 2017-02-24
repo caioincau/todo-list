@@ -17,6 +17,12 @@ const router = new VueRouter({
 })
 
 // ========================
+// Events
+// ========================
+import VueEvents from './plugins/events'
+Vue.use(VueEvents)
+
+// ========================
 // Resource
 // ========================
 import VueResource from 'vue-resource'

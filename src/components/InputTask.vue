@@ -30,7 +30,7 @@ export default {
       return task
     },
     broadcast (task) {
-      this.$emit('newTask', task)
+      this.$events.emit('newTask', task)
     },
     clearField () {
       this.$el.querySelector('input').value = ''

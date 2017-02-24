@@ -3,26 +3,33 @@
     <header class="header">
       <h1>Tarefas</h1>
     </header>
-    <input-task @newTask="addTask" ></input-task>
+    <input-task></input-task>
     <task-list v-bind:todo-list="tasks" ></task-list>
     <router-link class="cep" to="/cep">Verificar CEP</router-link>
+    <footer-todo>
+    </footer-todo>
   </section>
 </template>
 
 <script>
 import InputTask from './components/InputTask'
 import TaskList from './components/TaskList'
+import FooterTodo from './components/FooterTodo'
 
 export default {
   name: 'app',
   components: {
     InputTask,
-    TaskList
+    TaskList,
+    FooterTodo
   },
   data () {
     return {
       tasks: []
     }
+  },
+  mounted () {
+    this.$events.on('newTask', eventData => this.addTask(eventData))
   },
   methods: {
     addTask (task) {
