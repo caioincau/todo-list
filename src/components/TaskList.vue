@@ -14,10 +14,9 @@
 
 <script>
   export default {
-    props: ['todoList'],
     computed: {
       sortedTasks: function () {
-        let sorted = this.todoList
+        let sorted = this.$store.state.tasks
         return sorted.sort(function (a, b) {
           if (a.title < b.title) return -1
           if (a.title > b.title) return 1
@@ -27,7 +26,7 @@
     },
     methods: {
       completeTask (task) {
-        task.completed = !task.completed
+        this.$store.commit('completeTask', { task })
       }
     }
   }

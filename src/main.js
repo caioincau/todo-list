@@ -16,6 +16,8 @@ const router = new VueRouter({
   routes
 })
 
+import store from './store/index'
+
 // ========================
 // Events
 // ========================
@@ -31,6 +33,7 @@ Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({
+  store,
   router,
   el: '#app',
   template: `

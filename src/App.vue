@@ -4,7 +4,7 @@
       <h1>Tarefas</h1>
     </header>
     <input-task></input-task>
-    <task-list v-bind:todo-list="tasks" ></task-list>
+    <task-list ></task-list>
     <router-link class="cep" to="/cep">Verificar CEP</router-link>
     <footer-todo>
     </footer-todo>
@@ -23,18 +23,8 @@ export default {
     TaskList,
     FooterTodo
   },
-  data () {
-    return {
-      tasks: []
-    }
-  },
   mounted () {
     this.$events.on('newTask', eventData => this.addTask(eventData))
-  },
-  methods: {
-    addTask (task) {
-      this.tasks.push(task)
-    }
   }
 }
 </script>
