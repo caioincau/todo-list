@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "awesome-mask": "^0.3.5",
+    "babel-polyfill": "^6.23.0",
+    "es6-promise": "^4.0.5",
     "vue": "^2.1.0",
     "vue-resource": "^1.2.0",
     "vue-router": "^2.2.1",
